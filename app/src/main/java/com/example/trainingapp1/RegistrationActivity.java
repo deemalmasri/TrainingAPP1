@@ -22,10 +22,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RegistrationActivity extends AppCompatActivity {
-     EditText Name ,Email, Password, Phone ;
-     Button btn_login_from_register ,btn_Register;
-      FirebaseAuth firebaseAuth ;
-      FirebaseFirestore firestore ;
+    EditText Name ,Email, Password, Phone ;
+    Button btn_login_from_register ,btn_Register;
+    FirebaseAuth firebaseAuth ;
+    FirebaseFirestore firestore ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,15 +68,15 @@ public class RegistrationActivity extends AppCompatActivity {
 
                         }
                     });
-            }
+                }
             }
         }); //end register button on click method
 
         btn_login_from_register.setOnClickListener(new View.OnClickListener()
 
-            {
-                @Override
-                public void onClick (View v){
+        {
+            @Override
+            public void onClick (View v){
                 startActivity(new Intent(RegistrationActivity.this, LoginActivity.class));
 
             }
