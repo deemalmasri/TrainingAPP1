@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.media.Image;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -83,6 +84,7 @@ public class tabFragment1 extends Fragment implements
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
+
     }
 
     @Override
@@ -92,23 +94,6 @@ public class tabFragment1 extends Fragment implements
         contactview=inflater.inflate(R.layout.fragment_tab1, container, false);
         listView = (ListView) contactview.findViewById(R.id.lstContacts);
         listView.setAdapter(dataAdapter);
-        listView.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                ContactsInfo contactsInfo= (ContactsInfo) dataAdapter.getItem(position);
-                Intent intent=new Intent(getContext().getApplicationContext(),ContactDetails.class);
-                intent.putExtra("name",contactsInfo.getDisplayName());
-                intent.putExtra("number",contactsInfo.getPhoneNumber());
-                startActivity(intent);
-
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
 
 
         return contactview ;
@@ -118,6 +103,8 @@ public class tabFragment1 extends Fragment implements
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         requestContactPermission();
+//        Intent intent=new Intent(getContext().getApplicationContext(),ContactDetails.class);
+//        startActivity(intent);
 
 
 
@@ -191,13 +178,24 @@ public class tabFragment1 extends Fragment implements
 
                     contactsInfoList.add(contactsInfo);
                 }
+
             }
         }
         cursor.close();
 
         dataAdapter = new MyCustomAdapter(getContext().getApplicationContext(), R.layout.contact_info, contactsInfoList);
         listView.setAdapter(dataAdapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                ContactsInfo contactsInfo= (ContactsInfo) dataAdapter.getItem(position);
+                Intent intent=new Intent(getActivity(),ContactDetails.class);
+                intent.putExtra("name",contactsInfo.getDisplayName());
+                intent.putExtra("number",contactsInfo.getPhoneNumber());
+                startActivity(intent);
 
+            }
+        });
 
     }
 
