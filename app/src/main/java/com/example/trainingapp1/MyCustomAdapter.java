@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -24,6 +25,7 @@ public class MyCustomAdapter  extends ArrayAdapter {
     private class ViewHolder {
         TextView displayName;
         TextView phoneNumber;
+        public ImageView ivPic;
     }
 
     @Override
@@ -38,6 +40,7 @@ public class MyCustomAdapter  extends ArrayAdapter {
             holder = new ViewHolder();
             holder.displayName = (TextView) convertView.findViewById(R.id.displayName);
             holder.phoneNumber = (TextView) convertView.findViewById(R.id.phoneNumber);
+            holder.ivPic = (ImageView) convertView.findViewById(R.id.idIVContact);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();

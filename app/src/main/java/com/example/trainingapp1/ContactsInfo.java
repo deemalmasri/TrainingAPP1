@@ -1,12 +1,13 @@
 package com.example.trainingapp1;
 
 import android.media.Image;
+import android.net.Uri;
 
 public class ContactsInfo {
     private String contactId;
     private String displayName;
     private String phoneNumber;
-   // private Image contactimage;
+    private Uri proPic;
 
     public String getContactId() {
         return contactId;
@@ -30,6 +31,15 @@ public class ContactsInfo {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+
+    public Uri getProPic() {
+        return proPic;
+    }
+
+    public void setProPic(Uri proPic) {
+        this.proPic = proPic;
     }
 
 //    public Image getContactimage() {

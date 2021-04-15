@@ -4,9 +4,9 @@
 
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.WRITE_CONTACT" /> <!-- permissions to make a call -->
-    <uses-permission android:name="android.permission.CALL_PHONE" /> <!-- permissions to send sms -->
     <uses-permission android:name="android.permission.SEND_SMS" /> <!-- permissions to write sms -->
     <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -25,7 +25,14 @@
         </activity>
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".CreateNewContactActivity"></activity>
-        <activity android:name=".ContactDetails" />
+        <activity android:name=".ContactDetails"
+            android:parentActivityName="com.example.trainingapp1.HomeActivity" >
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.trainingapp1.HomeActivity" />
+        </activity>
         <activity android:name=".Fetch_Contact" />
         <activity
             android:name=".HomeActivity"
