@@ -25,7 +25,15 @@
         <activity android:name=".LoginActivity" >
         </activity>
         <activity android:name=".RegistrationActivity" />
-        <activity android:name=".CreateNewContactActivity"></activity>
+        <activity android:name=".CreateNewContactActivity"
+            android:parentActivityName="com.example.trainingapp1.HomeActivity" >
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.trainingapp1.HomeActivity" />
+
+        </activity>
         <activity android:name=".ContactDetails"
             android:parentActivityName="com.example.trainingapp1.HomeActivity" >
 

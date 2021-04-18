@@ -157,13 +157,13 @@ public class tabFragment1 extends Fragment implements
                     ContactsInfo contactsInfo = new ContactsInfo();
                     contactId = cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts._ID));
                     displayName = cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
-                    String urlThumbnail = cursor
+                    String url = cursor
                             .getString(cursor
                                     .getColumnIndex(ContactsContract.CommonDataKinds.Phone.PHOTO_URI));
 
                     contactsInfo.setContactId(contactId);
                     contactsInfo.setDisplayName(displayName);
-                    contactsInfo.setProPic(urlThumbnail);
+                    contactsInfo.setProPic(url);
 
                     Cursor phoneCursor =getActivity().getApplicationContext().getContentResolver().query(
                             ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
@@ -228,6 +228,7 @@ public class tabFragment1 extends Fragment implements
                     });
                     builder.show();
                 } else {
+
                     requestPermissions(
                             new String[]{android.Manifest.permission.READ_CONTACTS},
                             PERMISSIONS_REQUEST_READ_CONTACTS);
