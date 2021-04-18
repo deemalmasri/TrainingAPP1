@@ -22,6 +22,7 @@ import androidx.loader.content.Loader;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -156,10 +157,13 @@ public class tabFragment1 extends Fragment implements
                     ContactsInfo contactsInfo = new ContactsInfo();
                     contactId = cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts._ID));
                     displayName = cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
+                    String urlThumbnail = cursor
+                            .getString(cursor
+                                    .getColumnIndex(ContactsContract.CommonDataKinds.Phone.PHOTO_URI));
 
                     contactsInfo.setContactId(contactId);
                     contactsInfo.setDisplayName(displayName);
-
+                    contactsInfo.setProPic(urlThumbnail);
 
                     Cursor phoneCursor =getActivity().getApplicationContext().getContentResolver().query(
                             ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
@@ -177,6 +181,7 @@ public class tabFragment1 extends Fragment implements
                     phoneCursor.close();
 
                     contactsInfoList.add(contactsInfo);
+                    Log.d("log",contactsInfo.toString());
                 }
 
             }
@@ -192,6 +197,9 @@ public class tabFragment1 extends Fragment implements
                 Intent intent=new Intent(getActivity(),ContactDetails.class);
                 intent.putExtra("name",contactsInfo.getDisplayName());
                 intent.putExtra("number",contactsInfo.getPhoneNumber());
+                intent.putExtra("image",contactsInfo.getProPic());
+
+
                 startActivity(intent);
 
             }

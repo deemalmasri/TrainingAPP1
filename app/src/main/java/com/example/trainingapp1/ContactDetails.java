@@ -7,13 +7,18 @@ import androidx.core.content.ContextCompat;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class ContactDetails extends AppCompatActivity {
     TextView name;
@@ -30,11 +35,20 @@ public class ContactDetails extends AppCompatActivity {
         contactIV = findViewById(R.id.idIVContact);
         callIV = findViewById(R.id.idIVCall);
         messageIV = findViewById(R.id.idIVMessage);
+
        String name_from_intent=getIntent().getStringExtra("name");
         String phone_from_intent=getIntent().getStringExtra("number");
+        String image_from_intent=getIntent().getStringExtra("image");
 
-        Log.d("name",name_from_intent);
-        Log.d("phone",phone_from_intent);
+
+        if(image_from_intent !=null){
+            Log.d("1",image_from_intent);
+            final String thumbnailUrl =image_from_intent;
+            final Bitmap thumbnail = fetchThumbnail(thumbnailUrl);
+            contactIV.setImageBitmap(thumbnail);
+        } else {
+            contactIV.setImageDrawable(this.getBaseContext().getResources().getDrawable(R.drawable.ic_person));
+        }
         name.setText(name_from_intent);
         phone.setText(phone_from_intent);
 
@@ -60,7 +74,6 @@ public class ContactDetails extends AppCompatActivity {
         //in this method we are calling an intent to send sms.
         //on below line we are passing our contact number.
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sms:" + contactNumber));
-        intent.putExtra("sms_body", "Enter your messaage");
         startActivity(intent);
     }
 
@@ -79,5 +92,18 @@ public class ContactDetails extends AppCompatActivity {
         } else {
             Toast.makeText(this , "Enter Phone Number", Toast.LENGTH_SHORT).show();
         }
+    }
+    private Bitmap fetchThumbnail(String image_uri) {
+        Bitmap bitmap = null;
+        if (image_uri != null) {
+            try {
+                bitmap = MediaStore.Images.Media.getBitmap(this.getBaseContext().getContentResolver(), Uri.parse(image_uri));
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return bitmap;
     }
 }

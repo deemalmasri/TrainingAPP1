@@ -1,6 +1,9 @@
 package com.example.trainingapp1;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.net.Uri;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +13,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
 
 public class MyCustomAdapter  extends ArrayAdapter {
@@ -49,7 +54,27 @@ public class MyCustomAdapter  extends ArrayAdapter {
         ContactsInfo contactsInfo = (ContactsInfo) contactsInfoList.get(position);
         holder.displayName.setText(contactsInfo.getDisplayName());
         holder.phoneNumber.setText(contactsInfo.getPhoneNumber());
+        if(contactsInfo.getProPic() !=null){
+            final String thumbnailUrl = contactsInfo.getProPic();
+            final Bitmap thumbnail = fetchThumbnail(thumbnailUrl);
+            holder.ivPic.setImageBitmap(thumbnail);
+        } else {
+            holder.ivPic.setImageDrawable(getContext().getResources().getDrawable(R.drawable.ic_person));
+        }
 
         return convertView;
+    }
+    private Bitmap fetchThumbnail(String image_uri) {
+        Bitmap bitmap = null;
+        if (image_uri != null) {
+            try {
+                bitmap = MediaStore.Images.Media.getBitmap(context.getContentResolver(), Uri.parse(image_uri));
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return bitmap;
     }
 }

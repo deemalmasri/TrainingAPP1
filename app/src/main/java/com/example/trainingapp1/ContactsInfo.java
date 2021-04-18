@@ -1,13 +1,10 @@
 package com.example.trainingapp1;
 
-import android.media.Image;
-import android.net.Uri;
-
 public class ContactsInfo {
     private String contactId;
     private String displayName;
     private String phoneNumber;
-    private Uri proPic;
+    private String proPic;
 
     public String getContactId() {
         return contactId;
@@ -34,11 +31,11 @@ public class ContactsInfo {
     }
 
 
-    public Uri getProPic() {
+    public String getProPic() {
         return proPic;
     }
 
-    public void setProPic(Uri proPic) {
+    public void setProPic(String proPic) {
         this.proPic = proPic;
     }
 

@@ -46,12 +46,6 @@
             android:text="@string/tab_label3" />
 
     </com.google.android.material.tabs.TabLayout>
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/pager"
-            android:layout_width="match_parent"
-            android:layout_height="fill_parent"
-            android:layout_below="@id/tab_layout"/>
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
@@ -62,6 +56,14 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         app:srcCompat="@drawable/ic_add_contact" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/tab_layout"/>
+
+
 
 
 
