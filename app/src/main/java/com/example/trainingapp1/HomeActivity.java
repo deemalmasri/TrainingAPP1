@@ -10,6 +10,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
+import android.provider.Settings;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TableLayout;
@@ -24,6 +28,8 @@ public class HomeActivity extends AppCompatActivity {
 //        setSupportActionBar(toolbar);
 //        TableLayout tableLayout =findViewById(R.id.tab_layout);
         //androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         TabLayout tabLayout = findViewById(R.id.tab_layout);
 
 //        tabLayout.addTab(tabLayout.newTab().setText(R.string.tab_label1));
@@ -64,5 +70,21 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+    }
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.my_option_menu, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle options menu item clicks here.
+        int id = item.getItemId();
+
+        if (id == R.id.language){
+            Intent languageintent =new Intent(Settings.ACTION_LOCALE_SETTINGS);
+            startActivity(languageintent);
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

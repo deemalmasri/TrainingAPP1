@@ -30,7 +30,7 @@
         android:layout_below="@id/idIVContact"
         android:background="@color/purple_200"
         android:padding="8dp"
-        android:text="Name"
+        android:text="@string/name"
         android:textColor="@color/white"
         android:textSize="18sp" />
 
@@ -70,7 +70,7 @@
                 android:layout_toStartOf="@id/idIVMessage"
                 android:layout_toEndOf="@id/idIVCall"
                 android:layout_toRightOf="@id/idIVCall"
-                android:text="Phone" />
+                android:text="@string/phone" />
 
             <!--image view for displaying message icon-->
             <ImageView

@@ -15,27 +15,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TrainingAPP1">
-
-
-
-        <activity android:name=".MainActivity">
-
-
-        </activity>
-        <activity android:name=".LoginActivity" >
-        </activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".LoginActivity"></activity>
         <activity android:name=".RegistrationActivity" />
-        <activity android:name=".CreateNewContactActivity"
-            android:parentActivityName="com.example.trainingapp1.HomeActivity" >
+        <activity
+            android:name=".CreateNewContactActivity"
+            android:parentActivityName=".HomeActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.trainingapp1.HomeActivity" />
-
         </activity>
-        <activity android:name=".ContactDetails"
-            android:parentActivityName="com.example.trainingapp1.HomeActivity" >
+        <activity
+            android:name=".ContactDetails"
+            android:parentActivityName=".HomeActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
@@ -52,10 +46,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-
         </activity>
     </application>
-
 
 </manifest>
