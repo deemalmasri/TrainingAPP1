@@ -5,16 +5,13 @@
     <string name="registration_button_register">Register</string>
     <string name="registration_button_login">Login</string>
     <string name="title_activity_home">Home Activity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+
+    <string name="hello_first_fragment" translatable="false">Hello first fragment</string>
+    <string name="hello_second_fragment" translatable="false">Hello second fragment. Arg: %1$s</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="tab_label1">Contacts</string>
     <string name="tab_label2">Tab2 </string>
     <string name="tab_label3">Tab3 </string>
@@ -23,10 +20,18 @@
     <string name="password">Password</string>
     <string name="login">Login</string>
     <string name="register_now">Register Now !</string>
-    <string name="signup_now">SIGNUP </string>
+    <string name="signup_now">SIGNUP Now !</string>
     <string name="phone_number">Phone Number</string>
     <string name="name">Name</string>
     <string name="phone">Phone</string>
-    <string name="title_activity_main2">MainActivity</string>
+    <string name="title_activity_main2" translatable="false">MainActivity</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="enter_number">Enter Number</string>
+    <string name="save_contact">Save Contact</string>
+    <string name="contacts">Contacts</string>
+    <string name="language">Language</string>
+    <string name="title_contact_det">Contact Details</string>
+    <string name="title_create_contac">" New Contact "</string>
+
 
 </resources>

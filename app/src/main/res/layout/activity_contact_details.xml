@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ContactDetails">
+
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
@@ -20,7 +21,9 @@
         android:layout_height="300dp"
         android:id="@+id/idIVContact"
         android:background="@color/purple_200"
-        android:scaleType="fitXY" />
+        android:scaleType="fitXY"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <!--text view for displaying user name-->
     <TextView
@@ -57,7 +60,9 @@
                 android:layout_margin="8dp"
                 android:padding="4dp"
                 android:src="@drawable/ic_call"
-                app:tint="@color/purple_700" />
+                app:tint="@color/purple_700"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
 
             <!--text view for displaying user contact-->
             <TextView
@@ -81,7 +86,9 @@
                 android:layout_margin="8dp"
                 android:padding="4dp"
                 android:src="@drawable/ic_message"
-                app:tint="@color/purple_700" />
+                app:tint="@color/purple_700"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
 
         </RelativeLayout>
 

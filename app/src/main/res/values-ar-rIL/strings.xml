@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TrainingAPP1</string>
+    <string name="registration_text_login">لديك حساب ؟</string>
+    <string name="login_button_register">انشاء حساب </string>
+    <string name="registration_button_register">انشاء حساب </string>
+    <string name="registration_button_login">تسجيل الدخول</string>
+    <string name="title_activity_home">الصفحة الرئيسية</string>
+    <string name="tab_label1">جهات الاتصال</string>
+    <string name="tab_label2">الصفحة الثانية </string>
+    <string name="tab_label3">الصفحة الثالثة </string>
+    <string name="welcome"> مرحباً </string>
+    <string name="email_address"> البريد الإلكتروني</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="register_now">انشاء حساب جديد</string>
+    <string name="phone_number">رقم الهاتف</string>
+    <string name="name">الاسم</string>
+    <string name="phone">رقم الهاتف</string>
+    <string name="enter_name">أدخل الاسم</string>
+    <string name="enter_number">أدخل رقم الهاتف</string>
+    <string name="save_contact">حفظ جهة الاتصال</string>
+    <string name="contacts">جهات الاتصال</string>
+    <string name="signup_now">انشاء الحساب </string>
+    <string name="language">اللغة</string>
+    <string name="password">كلمة السر</string>
+    <string name="title_contact_det">معلومات جهة الاتصال</string>
+    <string name="title_create_contac">"اضافة جهة اتصال "</string>
+</resources>

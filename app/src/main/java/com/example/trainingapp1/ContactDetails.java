@@ -19,12 +19,17 @@ import android.widget.Toast;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.NumberFormat;
+import java.text.ParseException;
 
 public class ContactDetails extends AppCompatActivity {
     TextView name;
     TextView phone;
     private ImageView contactIV, callIV, messageIV;
     private static final int REQUEST_CALL = 1;
+    // TODO: Get the number format for this locale.
+    private NumberFormat mNumberFormat = NumberFormat.getInstance();
+    private static final String TAG = MainActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +44,7 @@ public class ContactDetails extends AppCompatActivity {
        String name_from_intent=getIntent().getStringExtra("name");
         String phone_from_intent=getIntent().getStringExtra("number");
         String image_from_intent=getIntent().getStringExtra("image");
+
 
 
         if(image_from_intent !=null){

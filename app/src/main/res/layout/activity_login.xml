@@ -26,18 +26,23 @@
             android:hint="@string/email_address"
             android:inputType="textEmailAddress"
             android:textColor="@color/black"
-            android:theme="@style/Custom.EditText" />
-
+            android:theme="@style/Custom.EditText"
+            android:textDirection="locale"
+            android:textAlignment="viewStart"/>
         <EditText
             android:id="@+id/loginPassword"
-            android:layout_width="315dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="20dp"
             android:ems="10"
             android:hint="@string/password"
             android:inputType="textPassword"
             android:textColor="@color/black"
-            android:theme="@style/Custom.EditText" />
+            android:theme="@style/Custom.EditText"
+            android:textDirection="locale"
+            android:textAlignment="viewStart"/>
+
+
 
         <Button
             android:id="@+id/btn_login"

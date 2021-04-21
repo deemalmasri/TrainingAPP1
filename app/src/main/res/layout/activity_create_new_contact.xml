@@ -12,16 +12,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:hint="Enter Name"
-        android:inputType="text" />
+        android:hint="@string/enter_name"
+        android:inputType="text"
+        android:textDirection="locale"
+        android:textAlignment="viewStart"/>
     <!--edit text for user phone number-->
     <EditText
         android:id="@+id/idEdtPhoneNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:hint="Enter Number"
-        android:inputType="phone" />
+        android:hint="@string/enter_number"
+        android:inputType="phone"
+        android:textDirection="locale"
+        android:textAlignment="viewStart"/>
     <!--edit text for user email-->
 
     <!--button for saving a new contact-->
@@ -30,6 +34,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="Save Contact"
+        android:text="@string/save_contact"
         android:textAllCaps="false" />
 </LinearLayout>
